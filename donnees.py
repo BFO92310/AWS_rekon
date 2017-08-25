@@ -1,5 +1,11 @@
 """ce fichier contient les données utilisées par l'application"""
 
+#variables AWS
+bucket= 'picturesbfo'
+collection_visages= 'copains'
+photo_prise= '/home/pi/Desktop/BFO/img.jpg'
+
+
 #liste des phrases si la personne est reconnue (format ssml) 
 phrases_copain=[
 "<speak> Hello {0}, it's nice to see you <break time='150ms'/> </speak>",
@@ -15,7 +21,7 @@ phrases_copain=[
 phrases_inconnu=[
 "<speak>Hi, my name is Polly. What's your name?<break time='1500ms'/> Well, I don't really care. I can't even hear you anyway. <break time='150ms'/> </speak>",
 "<speak>Hi stranger, pleasure meeting you. You look <emphasis level='strong'> really </emphasis> hot <break time='150ms'/> </speak>",
-"<speak>Oh. God. <break strength='x-strong' /> You are not a beautiful person, are you? <break time='150ms'/> </speak>"]
+"<speak>Human detected. <break time='300ms' /> Rekognition processing <break time='1100ms' /> Oh. God. <break strength='x-strong' /> You are not a beautiful person, are you? <break time='150ms'/> </speak>"]
 
 #liste des phrases si émotion détectée (format ssml)
 phrases_emotion=[
@@ -25,7 +31,7 @@ phrases_emotion=[
 "<speak> Your level of pheromones indicates that you are {1}, <break time='700ms'/> you should have sex {0} <break time='500ms'/> really <break time='150ms'/> </speak>"
 "<speak> My lovely {0} <break time='300ms' /> You are <emphasis level='strong'> horrible </emphasis> when you look {1}, but I guess nobody told you <break time='150ms' /> </speak>"]
 
-#liste des ExternalId
+#dictionnaire des ExternalId
 prenoms_copains={
 	"ExternalId":'Momo',
 	"ExternalId":'Flo',
